@@ -1,0 +1,280 @@
+#map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@font-face {
+  font-family: nasafont;
+  src: url(/fonts/Nasa.ttf);
+}
+
+#map {
+  position: relative;
+  width: 1600px;
+  height: 600px;
+  border-radius: 10px;
+  background-image: url(/img/marsbg2.jpg);
+  background-position: center;
+  background-repeat: repeat-x;
+}
+#level {
+  position: absolute;
+  top: 35px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 50px;
+  font-size: 24px;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  color: #0b3d91;
+}
+.overlay {
+  background-image: url(/img/muskonrocket.png);
+}
+#char {
+  position: absolute;
+  z-index: 9999;
+  left: 50px;
+  top: 350px;
+  width: 175px;
+  height: 250px;
+  background-image: url(/img/muskonrocket.png);
+  background-size: cover;
+}
+.charbg {
+  background-image: url(/img/muskonrocket_hand.png) !important;
+}
+.charbg2 {
+  position: absolute;
+  z-index: 9999;
+  left: 50px;
+  top: 425px !important;
+  width: 250px !important;
+  height: 175px !important;
+  background-image: url(/img/muskonrocketDown.png) !important;
+  background-size: cover;
+}
+
+#obstackle {
+  position: absolute;
+  top: 480px;
+  right: 0px;
+  background-image: url(/img/babyYoda.png);
+  background-size: cover;
+  width: 138px;
+  height: 120px;
+}
+#obstackle2 {
+  position: absolute;
+  top: 450px;
+  right: 0px;
+  background-image: url(/img/Et.png);
+  background-size: cover;
+  width: 75px;
+  height: 150px;
+}
+#obstackle3 {
+  position: absolute;
+  top: 450px;
+  right: 0px;
+  background-image: url(/img/martian.png);
+  background-size: cover;
+  width: 90px;
+  height: 150px;
+}
+
+.mapAnimation {
+  animation: animatedBackground 2s linear infinite;
+}
+.obstackleAnimation {
+  animation: obstackleAnim 2s infinite linear;
+}
+.obstackleAnimation2 {
+  animation: obstackleAnim 1.3s infinite linear;
+}
+.obstackleAnimationQuit {
+  opacity: 0%;
+}
+.jump {
+  animation: jump 1s linear;
+}
+
+@keyframes jump {
+  0% {
+    top: 350px;
+  }
+  20% {
+    top: 225px;
+    transform: rotate(-45deg);
+  }
+  40% {
+    top: 100px;
+  }
+
+  50% {
+    top: 100px;
+    transform: rotate(45deg);
+  }
+  60% {
+    top: 100px;
+  }
+
+  80% {
+    top: 225px;
+  }
+
+  100% {
+    top: 350px;
+  }
+}
+
+@keyframes obstackleAnim {
+  0% {
+    right: 0px;
+  }
+  100% {
+    right: 1550px;
+  }
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -1600px 0;
+  }
+}
+
+#endgameTile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  border-radius: 10px;
+  background-color: #f5f7f8;
+  padding: 30px;
+}
+#startgameTile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 400px;
+  border-radius: 10px;
+  background-image: url(/img/elonwtf.gif);
+  background-size: cover;
+  padding: 30px;
+}
+
+.displayNone {
+  display: none !important;
+}
+
+#score {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 50px;
+  font-size: 24px;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  color: #0b3d91;
+}
+
+#endgameTile > div:nth-child(1) {
+  width: 100%;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  color: #fc3d21;
+  text-align: center;
+  font-size: 54px;
+}
+#endgameTile > div:nth-child(2) {
+  width: 100%;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  color: #0b3d91;
+  text-align: center;
+  font-size: 34px;
+}
+#endgameTile > div:nth-child(4) {
+  width: 100%;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 34px;
+  color: #fc3d21;
+}
+#endgameTile > img:nth-child(3) {
+  margin: -10px 0px -30px 0px;
+}
+
+#endgameTile > div:nth-child(6) {
+  width: 100%;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 34px;
+  color: #fc3d21;
+  margin-bottom: 10px;
+}
+#retry {
+  background-color: #f5f7f8;
+  border: 2px #0b3d91 solid;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  font-size: 34px;
+  color: #0b3d91;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+#retry:hover {
+  cursor: pointer;
+  color: red;
+}
+#startButton {
+  background-image: url("/img/NasaButtonBg.jpg");
+  background-size: cover;
+  border: none;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  font-size: 34px;
+  color: white;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  transition: 0.3s linear;
+}
+#startButton:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+#highscore {
+  position: absolute;
+  text-align: center;
+  right: 10px;
+  top: 10px;
+  font-size: 24px;
+  font-family: nasafont;
+  letter-spacing: 2px;
+  color: #0b3d91;
+}
+p {
+  margin: 0px;
+}
